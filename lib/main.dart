@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_assignment_3/pageItem.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,22 +16,20 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         // This is the theme of your application.
         //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+       onGenerateRoute: (settings) {
+        switch (settings.name) {
+          case '/calculator':
+            return MaterialPageRoute(builder: (_) => MyHomePage(title: "Calculator stub"));
+          case '/jokesApi':
+            return MaterialPageRoute(builder: (_) => MyHomePage(title: 'Jokes Api Call'));
+          case '/NotesApi':
+            return MaterialPageRoute(builder: (_) => MyHomePage(title: 'Notes api call.'));
+          default:
+            return MaterialPageRoute(builder: (_) => MyHomePage(title: 'Default page'));
+        }      },
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -86,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
+      body: const Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Column(
@@ -103,16 +102,28 @@ class _MyHomePageState extends State<MyHomePage> {
           // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
           // action in the IDE, or press "p" in the console), to see the
           // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            PageItem(
+              title: 'Calculator',
+              icon: Icons.calculate,
+              route: '/calculator',
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+            PageItem(
+              title: 'Jokes',
+              icon: Icons.sentiment_satisfied,
+              route: '/jokes',
             ),
-          ],
+            PageItem(
+              title: 'Notes',
+              icon: Icons.note,
+              route: '/notes',
+            ),
+            PageItem(
+              title: 'Maps',
+              icon: Icons.map,
+              route: '/maps',
+            ),            ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
