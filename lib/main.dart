@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_assignment_3/calculator_screen';
 import 'package:flutter_assignment_3/pageItem.dart';
 
 void main() {
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
        onGenerateRoute: (settings) {
         switch (settings.name) {
           case '/calculator':
-            return MaterialPageRoute(builder: (_) => MyHomePage(title: "Calculator stub"));
+            return MaterialPageRoute(builder: (_) => CalculatorPage());
           case '/jokesApi':
             return MaterialPageRoute(builder: (_) => MyHomePage(title: 'Jokes Api Call'));
           case '/NotesApi':
