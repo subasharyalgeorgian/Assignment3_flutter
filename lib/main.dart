@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_assignment_3/calculator_screen';
+import 'package:flutter_assignment_3/calculatorScreen.dart';
+import 'package:flutter_assignment_3/jokesScreen.dart';
 import 'package:flutter_assignment_3/pageItem.dart';
 
 void main() {
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
           case '/calculator':
             return MaterialPageRoute(builder: (_) => CalculatorPage());
           case '/jokesApi':
-            return MaterialPageRoute(builder: (_) => MyHomePage(title: 'Jokes Api Call'));
+            return MaterialPageRoute(builder: (_) => JokesPage());
           case '/NotesApi':
             return MaterialPageRoute(builder: (_) => MyHomePage(title: 'Notes api call.'));
           default:
@@ -113,7 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
             PageItem(
               title: 'Jokes',
               icon: Icons.sentiment_satisfied,
-              route: '/jokes',
+              route: '/jokesApi',
             ),
             PageItem(
               title: 'Notes',

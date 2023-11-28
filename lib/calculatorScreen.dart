@@ -87,41 +87,46 @@ class _CalculatorPageState extends State<CalculatorPage> {
               _inputValue,
               style: TextStyle(fontSize: 40),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                _buildCalcButton('7'),
-                _buildCalcButton('8'),
-                _buildCalcButton('9'),
-                _buildCalcButton('/'),
+                calculatorButtonItem('7'),
+                calculatorButtonItem('8'),
+                calculatorButtonItem('9'),
+                calculatorButtonItem('/'),
+              ],
+            ), 
+            const SizedBox(height: 4),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                calculatorButtonItem('4'),
+                calculatorButtonItem('5'),
+                calculatorButtonItem('6'),
+                calculatorButtonItem('*'),
               ],
             ),
+            SizedBox(height: 4),
+
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                _buildCalcButton('4'),
-                _buildCalcButton('5'),
-                _buildCalcButton('6'),
-                _buildCalcButton('*'),
+                calculatorButtonItem('1'),
+                calculatorButtonItem('2'),
+                calculatorButtonItem('3'),
+                calculatorButtonItem('-'),
               ],
             ),
+           const SizedBox(height: 4),
+
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                _buildCalcButton('1'),
-                _buildCalcButton('2'),
-                _buildCalcButton('3'),
-                _buildCalcButton('-'),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                _buildCalcButton('0'),
-                _buildCalcButton('C', textColor: Colors.red),
-                _buildCalcButton('=', textColor: Colors.green),
-                _buildCalcButton('+'),
+                calculatorButtonItem('0'),
+                calculatorButtonItem('C', textColor: Colors.red),
+                calculatorButtonItem('=', textColor: Colors.green),
+                calculatorButtonItem('+'),
               ],
             ),
           ],
@@ -130,7 +135,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
     );
   }
 
-  Widget _buildCalcButton(String text, {Color textColor = Colors.black}) {
+  Widget calculatorButtonItem(String text, {Color textColor = Colors.black}) {
     return ElevatedButton(
       onPressed: () {
         if (text == 'C') {
@@ -144,8 +149,8 @@ class _CalculatorPageState extends State<CalculatorPage> {
         }
       },
       style: ElevatedButton.styleFrom(
-        primary: Colors.grey[300],
-        padding: EdgeInsets.all(20),
+        backgroundColor: Colors.grey[300],
+        padding: const EdgeInsets.all(20),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
         ),
