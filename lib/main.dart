@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_assignment_3/calculatorScreen.dart';
-import 'package:flutter_assignment_3/jokesScreen.dart';
-import 'package:flutter_assignment_3/notesScreen.dart';
-import 'package:flutter_assignment_3/pageItem.dart';
+import 'package:flutter_assignment_3/jokes_screen.dart';
+import 'package:flutter_assignment_3/map_screen.dart';
+import 'package:flutter_assignment_3/notes_screen.dart';
+import 'package:flutter_assignment_3/page_item.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,6 +31,8 @@ class MyApp extends StatelessWidget {
             return MaterialPageRoute(builder: (_) => const JokesPage());
           case '/notes':
             return MaterialPageRoute(builder: (_) =>  NotesPage());
+          case '/maps':
+            return MaterialPageRoute(builder: (_) => MapScreen());
           default:
             return MaterialPageRoute(builder: (_) => const MyHomePage(title: 'Default page'));
         }      },
