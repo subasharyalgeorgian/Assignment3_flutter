@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_assignment_3/calculatorScreen.dart';
+import 'package:flutter_assignment_3/calculator_screen.dart';
 import 'package:flutter_assignment_3/jokes_screen.dart';
 import 'package:flutter_assignment_3/map_screen.dart';
 import 'package:flutter_assignment_3/notes_screen.dart';
@@ -26,13 +26,13 @@ class MyApp extends StatelessWidget {
        onGenerateRoute: (settings) {
         switch (settings.name) {
           case '/calculator':
-            return MaterialPageRoute(builder: (_) => CalculatorPage());
+            return MaterialPageRoute(builder: (_) => const CalculatorPage());
           case '/jokes':
             return MaterialPageRoute(builder: (_) => const JokesPage());
           case '/notes':
-            return MaterialPageRoute(builder: (_) =>  NotesPage());
+            return MaterialPageRoute(builder: (_) =>  const NotesPage());
           case '/maps':
-            return MaterialPageRoute(builder: (_) => MapScreen());
+            return MaterialPageRoute(builder: (_) => const MapScreen());
           default:
             return MaterialPageRoute(builder: (_) => const MyHomePage(title: 'Default page'));
         }      },
@@ -60,18 +60,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -132,11 +120,6 @@ class _MyHomePageState extends State<MyHomePage> {
             ),            ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

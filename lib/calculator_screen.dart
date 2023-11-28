@@ -1,5 +1,6 @@
 // calculator_page.dart
 import 'package:flutter/material.dart';
+// ignore_for_file: library_private_types_in_public_api
 
 class CalculatorPage extends StatefulWidget {
   const CalculatorPage({super.key});
@@ -78,7 +79,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Calculator'),
+        title: const Text('Calculator'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -87,7 +88,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
           children: [
             Text(
               _inputValue,
-              style: TextStyle(fontSize: 40),
+              style: const TextStyle(fontSize: 40),
             ),
             const SizedBox(height: 20),
             Row(
@@ -109,7 +110,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
                 calculatorButtonItem('*'),
               ],
             ),
-            SizedBox(height: 4),
+            const SizedBox(height: 4),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
