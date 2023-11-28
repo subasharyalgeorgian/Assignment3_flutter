@@ -4,7 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class JokesPage extends StatefulWidget {
+  const JokesPage({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _JokesPageState createState() => _JokesPageState();
 }
 
@@ -37,14 +40,14 @@ class _JokesPageState extends State<JokesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Jokes Page'),
+        title: const Text('Jokes Page'),
       ),
       body: Center(
         child: FutureBuilder<String>(
           future: joke,
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return CircularProgressIndicator();
+              return const CircularProgressIndicator();
             } else if (snapshot.hasError) {
               return Text('Error: ${snapshot.error}');
             } else {
@@ -53,13 +56,13 @@ class _JokesPageState extends State<JokesPage> {
                 children: [
                   Text(
                     snapshot.data!,
-                    style: TextStyle(fontSize: 18),
+                    style: const TextStyle(fontSize: 18),
                     textAlign: TextAlign.center,
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: _getNextJoke,
-                    child: Text('Next Joke'),
+                    child: const Text('New Joke'),
                   ),
                 ],
               );

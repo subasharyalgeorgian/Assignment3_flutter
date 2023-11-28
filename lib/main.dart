@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_assignment_3/calculatorScreen.dart';
 import 'package:flutter_assignment_3/jokesScreen.dart';
+import 'package:flutter_assignment_3/notesScreen.dart';
 import 'package:flutter_assignment_3/pageItem.dart';
 
 void main() {
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Test Case',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -25,14 +26,14 @@ class MyApp extends StatelessWidget {
         switch (settings.name) {
           case '/calculator':
             return MaterialPageRoute(builder: (_) => CalculatorPage());
-          case '/jokesApi':
-            return MaterialPageRoute(builder: (_) => JokesPage());
-          case '/NotesApi':
-            return MaterialPageRoute(builder: (_) => MyHomePage(title: 'Notes api call.'));
+          case '/jokes':
+            return MaterialPageRoute(builder: (_) => const JokesPage());
+          case '/notes':
+            return MaterialPageRoute(builder: (_) =>  NotesPage());
           default:
-            return MaterialPageRoute(builder: (_) => MyHomePage(title: 'Default page'));
+            return MaterialPageRoute(builder: (_) => const MyHomePage(title: 'Default page'));
         }      },
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'TestCase'),
     );
   }
 }
@@ -114,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
             PageItem(
               title: 'Jokes',
               icon: Icons.sentiment_satisfied,
-              route: '/jokesApi',
+              route: '/jokes',
             ),
             PageItem(
               title: 'Notes',
