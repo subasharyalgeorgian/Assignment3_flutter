@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 
 class CalculatorPage extends StatefulWidget {
+  const CalculatorPage({super.key});
+
   @override
   _CalculatorPageState createState() => _CalculatorPageState();
 }

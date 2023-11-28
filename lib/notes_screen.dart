@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 
 // note_model.dart
@@ -11,12 +13,14 @@ class Note {
 // notes_page.dart
 
 class NotesPage extends StatefulWidget {
+  const NotesPage({super.key});
+
   @override
   _NotesPageState createState() => _NotesPageState();
 }
 
 class _NotesPageState extends State<NotesPage> {
-  List<Note> _notes = [];
+  final List<Note> _notes = [];
 
   void _showNoteDialog({Note? note}) {
     TextEditingController titleController = TextEditingController();
@@ -37,11 +41,11 @@ class _NotesPageState extends State<NotesPage> {
             children: [
               TextField(
                 controller: titleController,
-                decoration: InputDecoration(labelText: 'Title'),
+                decoration: const InputDecoration(labelText: 'Title'),
               ),
               TextField(
                 controller: contentController,
-                decoration: InputDecoration(labelText: 'Content'),
+                decoration: const InputDecoration(labelText: 'Content'),
                 maxLines: 3,
               ),
             ],
@@ -51,7 +55,7 @@ class _NotesPageState extends State<NotesPage> {
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text('Cancel'),
+              child: const Text('Cancel'),
             ),
             TextButton(
               onPressed: () {
@@ -86,7 +90,7 @@ class _NotesPageState extends State<NotesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Notes Page'),
+        title: const Text('Notes Page'),
       ),
       body: ListView.builder(
         itemCount: _notes.length,
@@ -95,7 +99,7 @@ class _NotesPageState extends State<NotesPage> {
             title: Text(_notes[index].title),
             subtitle: Text(_notes[index].content),
             trailing: IconButton(
-              icon: Icon(Icons.delete),
+              icon: const Icon(Icons.delete),
               onPressed: () {
                 _deleteNote(index);
               },
@@ -110,7 +114,7 @@ class _NotesPageState extends State<NotesPage> {
         onPressed: () {
           _showNoteDialog();
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }

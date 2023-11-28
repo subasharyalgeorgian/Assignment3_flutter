@@ -16,7 +16,7 @@ class PageItem extends StatelessWidget {
       },
       style: ElevatedButton.styleFrom(
         //primary: Theme.of(context).primaryColor,
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
         ),
@@ -28,10 +28,10 @@ class PageItem extends StatelessWidget {
             icon,
             size: 40,
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Text(
             title,
-            style: TextStyle(fontSize: 16),
+            style: const TextStyle(fontSize: 16),
           ),
         ],
       ),

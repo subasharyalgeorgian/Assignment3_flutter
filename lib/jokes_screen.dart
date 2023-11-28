@@ -1,4 +1,7 @@
 // jokes_page.dart
+
+// ignore_for_file: library_private_types_in_public_api
+
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -7,7 +10,6 @@ class JokesPage extends StatefulWidget {
   const JokesPage({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
   _JokesPageState createState() => _JokesPageState();
 }
 
